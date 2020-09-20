@@ -1,4 +1,4 @@
-# state
+# state_class형
 
 ## 1. 생성자
 

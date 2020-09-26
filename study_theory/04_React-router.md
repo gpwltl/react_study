@@ -1,6 +1,6 @@
 # React-router
 
-버전4로 진행하겠습니다. (버전3과 다르니 주의할 것!!)
+버전5로 진행하겠습니다.
 
 :baby_chick: **진행과정**
 
@@ -110,3 +110,17 @@ function Room({match}) {		// 함수형에서 match 참조하기
 
 
 ![image-20200924235052693](C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20200924235052693.png)
+
+
+
+:smile: 정리해보자! 
+
+1. 하나의 페이지에서만 라우터를 사용하고 싶다 ?
+
+위에서 제공한 순서대로! 
+
+2. 한 페이지에서 진행되는 것이 아니라, 예를 들어 NavBar에서 Home, Login 페이지를 부르고 싶다? 
+
+- 그렇다면 (**App.js**)에서 \<NavBar /> 선언 밑에 \<Switch>\<Route/>\</Switch> 구문을 작성해주고, (**NavBar.js**)에서 \<Link/>를 선언해줄 것
+
+- index.js에서 App을 감쌀 때 \<BroswerRouter>로 감싸야 함!! 

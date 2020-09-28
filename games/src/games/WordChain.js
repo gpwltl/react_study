@@ -1,27 +1,67 @@
-import React, { useState } from 'react';
-import WordChainList from './WordChainList'
+import React, { Component } from "react";
+import "./WordChain.css";
 
+class WordChain extends Component {
+  state = {
+    word: "혜지",
+    value: "",
+    result: "",
+    words: [],
+  };
 
-const WordChain = () => {
-
-    const [text, setText] = useState("");
-    const handleChange = (e) => {
-        setText(e.target.value);
-        console.log(e.target.value)
+  onSubmitForm = (e) => {
+    e.preventDefault();
+    if (this.state.word[this.state.word.length - 1] === this.state.value[0]) {
+      this.setState({
+        result: "딩동댕",
+        word: this.state.value,
+        value: "",
+      });
+      this.input.focus();
+    } else {
+      this.setState({
+        result: "땡",
+        value: "",
+      });
+      this.input.focus();
     }
+    this.setState({
+      words: this.state.words.concat(this.state.value),
+      value: "",
+    });
+  };
 
+  input;
 
+  onChangeInput = (e) => {
+    this.setState({ value: e.target.value });
+  };
+
+  onRefInput = (c) => {
+    this.input = c;
+  };
+
+  render() {
+    const { words } = this.state;
+    const inputList = words.map((t) => <div>{t}</div>);
     return (
-        <div>
-            <h1>word-chain</h1>
-            <form >
-                <input value={text} onChange={handleChange}></input>
-                <button type="submit">입력 </button>
-            </form>
-            <WordChainList />
-
-        </div >
+      <>
+        <h1 className="title">끝말잇기</h1>
+        <div className="text-first">제시어</div>
+        <div className="text">{this.state.word}</div>
+        <form onSubmit={this.onSubmitForm}>
+          <input
+            ref={this.onRefInput}
+            value={this.state.value}
+            onChange={this.onChangeInput}
+          />
+          <button>입력!</button>
+        </form>
+        <div>{inputList}</div>
+        <div>{this.state.result}</div>
+      </>
     );
-};
+  }
+}
 
 export default WordChain;

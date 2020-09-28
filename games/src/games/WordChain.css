@@ -1,0 +1,21 @@
+.title {
+  background-color: yellowgreen;
+  text-align: center;
+}
+
+.text-first {
+  position: absolute;
+  top: 17%;
+  left: 43%;
+}
+.text {
+  background-color: yellowgreen;
+  text-align: center;
+  font-size: x-large;
+  width: 200px;
+  margin: 0 auto;
+  position: absolute;
+  top: 20%;
+  left: 43%;
+  padding: 30px 10px;
+}

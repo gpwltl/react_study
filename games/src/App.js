@@ -1,12 +1,12 @@
-import React from 'react';
-import WordChain from './games/WordChain'
+import React from "react";
+import WordChain from "./games/WordChain";
 
-function App() {
+const App = () => {
   return (
-    <>
+    <div>
       <WordChain />
-    </>
+    </div>
   );
-}
+};
 
 export default App;

@@ -5,7 +5,8 @@ class WordChain extends Component {
   state = {
     word: "라디오",
     value: "",
-    result: "",
+    correct: "",
+    wrong: "",
     words: [],
     count: 0,
   };
@@ -16,28 +17,28 @@ class WordChain extends Component {
       this.setState({
         word: this.state.value,
         value: "",
-        result: "",
+        correct: "정답! +10",
+        wrong: "",
         count: this.state.count + 10,
         words: this.state.words.concat(this.state.value),
       });
     } else {
       this.setState({
-        result: "땡!",
+        correct: "",
+        wrong: "땡!",
         value: "",
       });
-      this.input.focus();
+      //this.input.focus();
     }
   };
-
-  input;
 
   onChangeInput = (e) => {
     this.setState({ value: e.target.value });
   };
 
-  onRefInput = (c) => {
-    this.input = c;
-  };
+  // onRefInput = (c) => {
+  //   this.input = c;
+  // };
 
   render() {
     const { words } = this.state;
@@ -56,7 +57,7 @@ class WordChain extends Component {
         <div className="text">{this.state.word}</div>
         <form onSubmit={this.onSubmitForm} className="input">
           <input
-            ref={this.onRefInput}
+            //ref={this.onRefInput}
             value={this.state.value}
             onChange={this.onChangeInput}
           />
@@ -68,7 +69,8 @@ class WordChain extends Component {
           <h3>점수</h3>
           {this.state.count}
         </div>
-        <div className="result">{this.state.result}</div>
+        <div className="result-correct">{this.state.correct}</div>
+        <div className="result-wrong">{this.state.wrong}</div>
       </>
     );
   }

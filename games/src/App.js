@@ -1,10 +1,11 @@
 import React from "react";
-import WordChain from "./games/WordChain";
+//import Game from "./gugudan/Gugudan";
+import Game from "./wordChain/WordChain";
 
 const App = () => {
   return (
     <div>
-      <WordChain />
+      <Game />
     </div>
   );
 };

@@ -1,21 +1,62 @@
 .title {
-  background-color: yellowgreen;
+  background-color: #99ff99;
+  text-align: center;
+}
+
+.rule {
   text-align: center;
 }
 
 .text-first {
   position: absolute;
-  top: 17%;
+  top: 39%;
   left: 43%;
 }
 .text {
-  background-color: yellowgreen;
+  background-color: #99ff99;
   text-align: center;
   font-size: x-large;
   width: 200px;
   margin: 0 auto;
   position: absolute;
-  top: 20%;
+  top: 45%;
   left: 43%;
   padding: 30px 10px;
+}
+.input {
+  position: absolute;
+  top: 59%;
+  left: 44%;
+}
+.list {
+  background-color: #ccff99;
+  text-align: center;
+  width: 100px;
+  padding: 20px 5px;
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+.list-position {
+  position: absolute;
+  top: 65%;
+  left: 30%;
+  width: 600px;
+}
+
+.count {
+  position: absolute;
+  top: 45%;
+  left: 70%;
+  text-align: center;
+  font-size: large;
+}
+
+.result {
+  font-size: 80px;
+  color: red;
+  position: absolute;
+  left: 20%;
+  top: 45%;
 }
